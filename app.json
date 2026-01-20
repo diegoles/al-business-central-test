@@ -1,0 +1,30 @@
+{
+  "id": "d2d4c06b-0f9d-4c7a-9f36-3a1f9e2f9c31",
+  "name": "BC-Loyalty",
+  "publisher": "ediaz/altiora",
+  "version": "1.0.0.2",
+  "brief": "",
+  "description": "Loyalty points extension",
+  "privacyStatement": "",
+  "EULA": "",
+  "help": "",
+  "url": "",
+  "logo": "",
+  "dependencies": [],
+  "screenshots": [],
+  "platform": "1.0.0.0",
+  "application": "20.0.0.0",
+  "idRanges": [
+    {
+      "from": 70000,
+      "to": 70049
+    }
+  ],
+  "resourceExposurePolicy": {
+    "allowDebugging": true,
+    "allowDownloadingSource": false,
+    "includeSourceInSymbolFile": false,
+    "applyToDevExtension": true
+  },
+  "runtime": "14.3"
+}
