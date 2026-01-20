@@ -1,0 +1,206 @@
+{
+  "info": {
+    "name": "BC-Loyalty API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": "Requests for BC-Loyalty API (v2.0)"
+  },
+  "item": [
+    {
+      "name": "List Companies",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{bcBaseUrl}}/api/v2.0/companies?tenant={{tenant}}",
+          "host": [
+            "{{bcBaseUrl}}"
+          ],
+          "path": [
+            "api",
+            "v2.0",
+            "companies"
+          ],
+          "query": [
+            {
+              "key": "tenant",
+              "value": "{{tenant}}"
+            }
+          ]
+        },
+        "auth": {
+          "type": "basic",
+          "basic": [
+            {
+              "key": "username",
+              "value": "{{bcUser}}",
+              "type": "string"
+            },
+            {
+              "key": "password",
+              "value": "{{bcPassword}}",
+              "type": "string"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "List Loyalty Points",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{bcBaseUrl}}/api/ediaz/loyalty/v2.0/companies({{companyId}})/loyaltyPoints?tenant={{tenant}}",
+          "host": [
+            "{{bcBaseUrl}}"
+          ],
+          "path": [
+            "api",
+            "ediaz",
+            "loyalty",
+            "v2.0",
+            "companies({{companyId}})",
+            "loyaltyPoints"
+          ],
+          "query": [
+            {
+              "key": "tenant",
+              "value": "{{tenant}}"
+            }
+          ]
+        },
+        "auth": {
+          "type": "basic",
+          "basic": [
+            {
+              "key": "username",
+              "value": "{{bcUser}}",
+              "type": "string"
+            },
+            {
+              "key": "password",
+              "value": "{{bcPassword}}",
+              "type": "string"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Get Loyalty Points by Customer",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{bcBaseUrl}}/api/ediaz/loyalty/v2.0/companies({{companyId}})/loyaltyPoints({{customerSystemId}})?tenant={{tenant}}",
+          "host": [
+            "{{bcBaseUrl}}"
+          ],
+          "path": [
+            "api",
+            "ediaz",
+            "loyalty",
+            "v2.0",
+            "companies({{companyId}})",
+            "loyaltyPoints({{customerSystemId}})"
+          ],
+          "query": [
+            {
+              "key": "tenant",
+              "value": "{{tenant}}"
+            }
+          ]
+        },
+        "auth": {
+          "type": "basic",
+          "basic": [
+            {
+              "key": "username",
+              "value": "{{bcUser}}",
+              "type": "string"
+            },
+            {
+              "key": "password",
+              "value": "{{bcPassword}}",
+              "type": "string"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Adjust Loyalty Points",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"points\": 50,\n  \"description\": \"Ajuste por reclamo\"\n}"
+        },
+        "url": {
+          "raw": "{{bcBaseUrl}}/api/ediaz/loyalty/v2.0/companies({{companyId}})/loyaltyPoints({{customerSystemId}})/Microsoft.NAV.adjustLoyaltyPoints?tenant={{tenant}}",
+          "host": [
+            "{{bcBaseUrl}}"
+          ],
+          "path": [
+            "api",
+            "ediaz",
+            "loyalty",
+            "v2.0",
+            "companies({{companyId}})",
+            "loyaltyPoints({{customerSystemId}})",
+            "Microsoft.NAV.adjustLoyaltyPoints"
+          ],
+          "query": [
+            {
+              "key": "tenant",
+              "value": "{{tenant}}"
+            }
+          ]
+        },
+        "auth": {
+          "type": "basic",
+          "basic": [
+            {
+              "key": "username",
+              "value": "{{bcUser}}",
+              "type": "string"
+            },
+            {
+              "key": "password",
+              "value": "{{bcPassword}}",
+              "type": "string"
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "bcBaseUrl",
+      "value": "http://bcserver/BC"
+    },
+    {
+      "key": "bcUser",
+      "value": "admin"
+    },
+    {
+      "key": "bcPassword",
+      "value": "password"
+    },
+    {
+      "key": "companyId",
+      "value": "GUID_HERE"
+    },
+    {
+      "key": "customerSystemId",
+      "value": "GUID_HERE"
+    }
+  ]
+}
